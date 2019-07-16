@@ -1,0 +1,7 @@
+test:
+  :host: 'localhost'
+  :port: 389
+  :auth:
+    :method: :simple
+    :username: 'admin'
+    :password: 'secret'

@@ -1,0 +1,10 @@
+base:
+  'dc=example, dc=org'
+
+person:
+  dn: 'ou=people, dc=example, dc=org'
+  attrs:
+    - uid
+    - cn
+    - sn
+    - mail
