@@ -88,8 +88,6 @@ module Ldap
           csv << headers.map { |x| entry.send(x).first }
         end
       end
-    rescue StandardError => e
-      puts "ERROR: on add entry to CSV from LDAP search: #{e.message}"
     end
 
     def save_record_log(ldap, row)

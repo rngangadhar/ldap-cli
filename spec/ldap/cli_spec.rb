@@ -45,7 +45,6 @@ RSpec.describe Ldap::Cli do
 
     it 'succeeds on importing a csv with valid data' do
       @ldap.import('spec/fixtures/valid_data.csv')
-      binding.pry
       expect(@ldap.errors.empty?).to eq(true)
     end
   end
