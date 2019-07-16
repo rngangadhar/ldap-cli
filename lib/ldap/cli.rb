@@ -37,6 +37,8 @@ module Ldap
         valid_headers row.headers
         save_record(row)
       end
+    rescue StandardError => e
+      puts "ERROR: on add entry to LDAP server using CSV: #{e.message}"
     end
 
     def export(args = {})
@@ -44,6 +46,8 @@ module Ldap
       @filter = args[:filter]
       add_header
       export_data
+    rescue StandardError => e
+      puts "ERROR: On LdapCli#export: #{e.message}"
     end
 
     private
@@ -84,6 +88,8 @@ module Ldap
           csv << headers.map { |x| entry.send(x).first }
         end
       end
+    rescue StandardError => e
+      puts "ERROR: on add entry to CSV from LDAP search: #{e.message}"
     end
 
     def save_record_log(ldap, row)
